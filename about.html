@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGAP Consultants | Our Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-color: #DFFF00;
+            --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #ffffff; 
+            color: #1a1a1a; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, .font-serif { 
+            font-family: 'Playfair Display', serif; 
+        }
+        
+        .menu-line { 
+            transition: transform 0.4s var(--ease-out-quint), opacity 0.4s var(--ease-out-quint); 
+        }
+        .menu-open .line-1 { 
+            transform: translateY(8px) rotate(45deg); 
+        }
+        .menu-open .line-2 { 
+            opacity: 0; 
+        }
+        .menu-open .line-3 { 
+            transform: translateY(-8px) rotate(-45deg); 
+        }
+
+        #header.scrolled .mix-blend-difference {
+            mix-blend-mode: normal;
+        }
+        #header.scrolled .logo-text,
+        #header.scrolled .social-links a {
+             color: #1a1a1a;
+        }
+        #header.scrolled .menu-line {
+            background-color: #1a1a1a;
+        }
+
+        .fade-in { 
+            opacity: 0; 
+            transform: translateY(40px); 
+            transition: opacity 0.8s var(--ease-out-quint), transform 0.8s var(--ease-out-quint); 
+        }
+        .fade-in.visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="social-links text-sm tracking-widest text-white mix-blend-difference space-x-4">
+                <a href="#" class="hover:opacity-75 transition-opacity">Fb.</a>
+                <a href="#" class="hover:opacity-75 transition-opacity">Tw.</a>
+                <a href="#" class="hover:opacity-75 transition-opacity">In.</a>
+            </div>
+            <a href="index.html" class="logo-text absolute left-1/2 -translate-x-1/2 text-2xl font-bold tracking-widest text-white mix-blend-difference">AGAP</a>
+            <button id="mobile-menu-button" aria-label="Toggle Menu" class="z-50 w-8 h-6 flex flex-col justify-between">
+                <span class="block w-full h-0.5 bg-white mix-blend-difference menu-line line-1"></span>
+                <span class="block w-full h-0.5 bg-white mix-blend-difference menu-line line-2"></span>
+                <span class="block w-full h-0.5 bg-white mix-blend-difference menu-line line-3"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Fullscreen Menu -->
+    <div id="fullscreen-menu" class="fixed inset-0 bg-black bg-opacity-95 z-40 flex items-center justify-center transition-opacity duration-500 opacity-0 pointer-events-none">
+        <nav class="text-center">
+            <a href="index.html#studio" class="block text-white text-4xl md:text-6xl font-serif mb-6 opacity-0 translate-y-4 transition-all duration-500 menu-item">Studio</a>
+            <a href="index.html#process" class="block text-white text-4xl md:text-6xl font-serif mb-6 opacity-0 translate-y-4 transition-all duration-500 menu-item">Process</a>
+            <a href="index.html#projects" class="block text-white text-4xl md:text-6xl font-serif mb-6 opacity-0 translate-y-4 transition-all duration-500 menu-item">Projects</a>
+            <a href="index.html#awards" class="block text-white text-4xl md:text-6xl font-serif mb-6 opacity-0 translate-y-4 transition-all duration-500 menu-item">Awards</a>
+            <a href="index.html#contact" class="block text-white text-4xl md:text-6xl font-serif opacity-0 translate-y-4 transition-all duration-500 menu-item">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- SECTION 1: Hero -->
+        <section class="h-[80vh] bg-cover bg-center bg-gray-800 relative" style="background-image: url('https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=2070&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="container mx-auto px-6 h-full flex flex-col justify-center relative z-10">
+                <h1 class="font-serif text-5xl md:text-7xl text-white max-w-4xl leading-tight">We believe architecture is a conversation between humanity and its environment.</h1>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Our Philosophy -->
+        <section class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="font-serif text-4xl md:text-5xl fade-in">Design-Led. People-Focused.</h2>
+                    <div class="prose prose-xl max-w-none text-gray-600 leading-relaxed space-y-6 mt-8 fade-in" style="transition-delay: 150ms;">
+                        <p>AGAP was founded on the simple idea that a space should be more than just a structure; it should be an experience. We are a collective of architects, designers, and thinkers who are passionate about crafting narratives in space. Our work is a continuous exploration of form, materiality, and light, always guided by the unique stories and aspirations of our clients.</p>
+                        <p>We approach each project with a deep sense of responsibility—to our clients, to the community, and to the environment. Sustainability and thoughtful innovation are not afterthoughts; they are integral to our design process from day one.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: The Founders -->
+        <section class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl md:text-5xl font-serif">Meet the Principals</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                    <!-- Alexandre Dubois -->
+                    <div class="fade-in" style="transition-delay: 100ms;">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" class="w-full h-auto object-cover" alt="Portrait of Alexandre Dubois">
+                        <h3 class="font-serif text-3xl mt-6">Alexandre Dubois</h3>
+                        <p class="text-gray-500 mb-4">Founder & Principal Architect</p>
+                        <p class="text-gray-600 leading-relaxed">With over two decades of experience, Alexandre is the visionary force behind AGAP. His award-winning work is characterized by a rigorous attention to detail and a profound understanding of spatial harmony. He believes that great architecture has the power to elevate the human spirit.</p>
+                    </div>
+                    <!-- Elara Vance -->
+                    <div class="fade-in" style="transition-delay: 200ms;">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" class="w-full h-auto object-cover" alt="Portrait of Elara Vance">
+                        <h3 class="font-serif text-3xl mt-6">Elara Vance</h3>
+                        <p class="text-gray-500 mb-4">Partner & Head of Interiors</p>
+                        <p class="text-gray-600 leading-relaxed">Elara leads our interior design practice with a focus on creating spaces that are both timeless and deeply personal. Her approach combines a sophisticated understanding of color, texture, and materiality with a keen sense for how people live and interact within a space.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA (re-used from homepage) -->
+        <section id="contact" class="py-20 md:py-40 bg-white text-center">
+            <div class="container mx-auto px-6 fade-in">
+                <h2 class="text-4xl md:text-6xl font-serif">Let's build together.</h2>
+                <p class="mt-4 text-lg text-gray-600">Have a project in mind? We'd love to hear about it.</p>
+                <a href="contact.html" class="inline-block mt-8 bg-black text-white py-4 px-12 text-sm uppercase tracking-widest hover:bg-gray-800 transition-colors">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-white text-gray-500 py-12 border-t border-gray-100">
+        <div class="container mx-auto px-6 text-center md:flex md:justify-between">
+            <p class="text-sm">&copy; 2025 AGAP Consultants. All Rights Reserved.</p>
+            <p class="text-sm mt-2 md:mt-0">Crafting Spaces, Inspiring Life.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('header');
+            const menuButton = document.getElementById('mobile-menu-button');
+            const fullscreenMenu = document.getElementById('fullscreen-menu');
+            const menuItems = document.querySelectorAll('.menu-item');
+            const faders = document.querySelectorAll('.fade-in');
+
+            // --- Header scroll effect ---
+            // Initial check in case the page is already scrolled
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled', 'bg-white', 'shadow-md');
+            }
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled', 'bg-white', 'shadow-md');
+                } else {
+                    header.classList.remove('scrolled', 'bg-white', 'shadow-md');
+                }
+            });
+
+            // --- Mobile Menu Toggle ---
+            const toggleMenu = () => {
+                const isMenuOpen = menuButton.classList.toggle('menu-open');
+                menuButton.setAttribute('aria-expanded', isMenuOpen);
+                
+                if (isMenuOpen) {
+                    document.body.style.overflow = 'hidden';
+                    fullscreenMenu.classList.remove('opacity-0', 'pointer-events-none');
+                    menuItems.forEach((item, index) => {
+                        item.style.transitionDelay = `${150 + index * 50}ms`;
+                        item.classList.remove('opacity-0', 'translate-y-4');
+                    });
+                } else {
+                    document.body.style.overflow = '';
+                    fullscreenMenu.classList.add('opacity-0', 'pointer-events-none');
+                    menuItems.forEach(item => {
+                        item.style.transitionDelay = '0ms';
+                        item.classList.add('opacity-0', 'translate-y-4');
+                    });
+                }
+            };
+            
+            menuButton.addEventListener('click', toggleMenu);
+            fullscreenMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // --- Fade-in elements on scroll ---
+            const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        });
+    </script>
+</body>
+</html>
